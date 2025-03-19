@@ -1,0 +1,14 @@
+x= matrix(1:12, ncol=4) y= matrix(13:24, ncol=4) print("Matrix-1") print(x)
+print("Size of matrix x") print(dim(x)) print("Matrix-2") print(y)
+print("Size of matrix y") print(dim(y)) result=rbind(x,y)
+print("After concatenating two given matrices:") print(result)
+print("size of matrix after concatenation") print(dim(rbind(x,y)))
+sum=x+y
+print("Result of addition ") print(sum)
+sub=x-y
+print("Result of subtraction ") print(sub)
+mul=x*y
+print("Resukt of multiplication") print(mul)
+div=x/y
+print("Result of division")
+print(div)
