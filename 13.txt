@@ -1,0 +1,15 @@
+
+install.packages("arules") 
+install.packages("arulesViz")
+
+library(arules) 
+library(arulesViz) 
+data("Groceries") # Fitting model
+ 
+set.seed = 220 # Setting seed 
+associa_rules = apriori(data = Groceries, parameter = list(support = 0.004,confidence = 0.2))
+
+itemFrequencyPlot(Groceries, topN = 10)
+
+inspect(sort(associa_rules, by = 'lift')[1:10]) 
+plot(associa_rules, method = "graph", measure = "confidence", shading = "lift")
