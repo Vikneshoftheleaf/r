@@ -1,0 +1,14 @@
+
+data("USArrests")
+
+scaled_data <- scale(USArrests)
+
+library(cluster)
+set.seed(123)
+clara_results <- clara(scaled_data, 3) #Display the data 
+print(clara_results)
+#install.packages("factoextra") library(factoextra)
+
+fviz_cluster(clara_results, data = scaled_data, palette = "jco", geom = "point") # Plot the silhouette widths
+sil_width <- silhouette(clara_results$clustering, dist(scaled_data))
+fviz_silhouette(sil_width)
